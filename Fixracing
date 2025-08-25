@@ -1,24 +1,48 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FIX RACING - Soporte para Tablet KTM 790/890</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; color: #333; }
     header { background: #000; color: #FFA500; padding: 2rem; text-align: center; }
+    header img { max-height: 80px; display: block; margin: 0 auto 1rem; }
     header h1 { margin: 0; font-size: 2.5rem; }
     header p { margin-top: 0.5rem; font-size: 1.2rem; }
     .container { padding: 2rem; max-width: 960px; margin: auto; }
     .features, .faq { background: #f4f4f4; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; }
     h2 { color: #FFA500; }
     .product-img { width: 100%; max-width: 600px; display: block; margin: 1rem auto; }
+    .bizum-button {
+      background: #FFA500; color: black; padding: 1rem 2rem;
+      border: none; font-size: 1.2rem; cursor: pointer; border-radius: 8px;
+      margin-top: 1rem;
+    }
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: white; padding: 2rem; border-radius: 10px; max-width: 400px; text-align: center;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 5px; border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background: #FFA500; color: black; border: none; padding: 0.75rem 1.5rem;
+      cursor: pointer; border-radius: 8px;
+    }
     footer { background: #000; color: #fff; text-align: center; padding: 1rem; margin-top: 3rem; }
-    ul { line-height: 1.6; }
   </style>
 </head>
 <body>
+
   <header>
+    <img src="logo.png" alt="FIX RACING Logo">
     <h1>FIX RACING</h1>
     <p>Potencia tu KTM. Navega sin límites.</p>
   </header>
@@ -42,8 +66,17 @@
     </section>
 
     <section>
-      <h2>Instalación fácil</h2>
-      <p>Instálalo tú mismo en menos de 10 minutos. No se necesitan herramientas especiales. Incluye instrucciones detalladas.</p>
+      <h2>Compra por Bizum</h2>
+      <button class="bizum-button" onclick="document.getElementById('bizum-modal').style.display='flex'">Pagar con Bizum</button>
+      <div class="modal" id="bizum-modal" onclick="this.style.display='none'">
+        <div class="modal-content">
+          <h3>Pago por Bizum</h3>
+          <p>💶 <strong>Importe:</strong> 99 €</p>
+          <p>📱 <strong>Número:</strong> 717-112-938</p>
+          <p>📝 <strong>Concepto:</strong> Soporte FIX RACING KTM</p>
+          <p>📩 <strong>Después del pago:</strong> Envíanos tus datos a <strong>eduardaires-hotmail.es</strong></p>
+        </div>
+      </div>
     </section>
 
     <section class="faq">
@@ -55,10 +88,21 @@
         <li><strong>¿Garantía?</strong> 2 años por defectos de fabricación.</li>
       </ul>
     </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <form class="contact-form" action="mailto:eduardaires-hotmail.es" method="POST" enctype="text/plain">
+        <input type="text" name="Nombre" placeholder="Tu nombre" required>
+        <input type="email" name="Email" placeholder="Tu correo electrónico" required>
+        <textarea name="Mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 FIX RACING · info@fixracing.com</p>
+    <p>&copy; 2025 FIX RACING · eduardaires-hotmail.es</p>
   </footer>
+
 </body>
 </html>
